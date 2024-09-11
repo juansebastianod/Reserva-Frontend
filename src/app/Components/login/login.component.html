@@ -1,0 +1,42 @@
+<div class="login-container">
+  <mat-card class="loginCard">
+    <div class="header">
+      <h2>Login</h2>
+    </div>
+
+    <mat-card-content style="padding-bottom: 15px;">
+      <form [formGroup]="formularioLogin" (ngSubmit)="iniciarSesion()">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Username</mat-label> <!-- Cambiado de Email a Username -->
+          <input formControlName="username" matInput autocomplete="off"> <!-- Cambiado de email a username -->
+          <mat-icon matSuffix>person</mat-icon> <!-- Icono cambiado a persona -->
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input [type]="ocultarpassword ? 'password' : 'text'" formControlName="password" matInput autocomplete="off">
+          <button mat-icon-button matSuffix (click)="ocultarpassword = !ocultarpassword" type="button">
+            <mat-icon matSuffix>{{ ocultarpassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <button class="full-width" mat-raised-button color="primary" type="submit" [disabled]="formularioLogin.invalid">
+          Ingresar
+          <mat-icon matSuffix>login</mat-icon>
+        </button>
+      </form>
+    </mat-card-content>
+
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate" *ngIf="mostrarLoading"></mat-progress-bar>
+    </mat-card-footer>
+
+    <!-- Botón de Registrar -->
+    <div class="register-section">
+      <button class="full-width" mat-raised-button color="accent" (click)="openRegisterDialog()">
+        Registrar
+        <mat-icon>person_add</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+</div>

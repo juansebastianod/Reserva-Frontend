@@ -1,0 +1,68 @@
+<h1 style="margin: 20px 0px 0px 40px;">Dashboard Resumen</h1>
+
+<mat-card style="margin: 20px 40px 40px 40px;">
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="100px">
+      <mat-grid-tile>
+        <mat-card class="card-info">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <mat-icon color="accent">payments</mat-icon>
+            </div>
+            <mat-card-title>Total Ingresos</mat-card-title>
+            <mat-card-subtitle>$ {{totalIngresos.toFixed(2)}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="card-info">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <mat-icon color="warn">sell</mat-icon>
+            </div>
+            <mat-card-title>Total Ventas</mat-card-title>
+            <mat-card-subtitle># {{totalVentas}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="card-info">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <mat-icon color="primary">category</mat-icon>
+            </div>
+            <mat-card-title>Total Productos</mat-card-title>
+            <mat-card-subtitle># {{totalProductos}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="card-info">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <mat-icon color="accent">event</mat-icon>
+            </div>
+            <mat-card-title>Reservas Semana</mat-card-title>
+            <mat-card-subtitle># {{reservasSemana}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>
+
+<!-- Gráficos -->
+<div style="margin: 20px 40px;">
+  <h2>Gráficos de Estadísticas</h2>
+  
+  <div style="width: 100%; max-width: 600px; margin: auto;">
+    <canvas id="chartBarras"></canvas>
+  </div>
+
+  <div style="width: 100%; max-width: 600px; margin: auto; margin-top: 40px;">
+    <canvas id="chartLineas"></canvas>
+  </div>
+</div>

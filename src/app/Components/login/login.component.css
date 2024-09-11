@@ -1,0 +1,35 @@
+/* Centrar el contenido en toda la pantalla */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  /* Estilo para la tarjeta de login */
+  .loginCard {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white;
+  }
+  
+  /* Encabezado centrado */
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Hacer los campos de entrada más anchos */
+  .full-width {
+    width: 100%;
+  }
+  
+  /* Botón de ingresar centrado */
+  button[type="submit"] {
+    margin-top: 20px;
+  }

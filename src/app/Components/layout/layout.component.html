@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h1>Sistema de Venta</h1>
+    <button mat-icon-button (click)="sidenav.toggle();">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav opened="true" mode="side" style="width: 200px;">
+    <mat-nav-list>
+      <mat-list-item routerLink="/pages/users">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <div mat-line>Usuarios</div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/pages/services">
+        <mat-icon mat-list-icon>build</mat-icon>
+        <div mat-line>Servicios</div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/pages/reservations">
+        <mat-icon mat-list-icon>calendar_today</mat-icon>
+        <div mat-line>Reservas</div>
+      </mat-list-item>
+      
+      <!-- Espacio adicional antes del botón de cierre de sesión -->
+      <mat-divider></mat-divider>
+
+      <!-- Botón de cierre de sesión -->
+      <mat-list-item (click)="logout()">
+        <mat-icon mat-list-icon>exit_to_app</mat-icon>
+        <div mat-line>Cerrar sesión</div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div style="height: 90vh;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
